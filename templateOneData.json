@@ -1,0 +1,259 @@
+{
+  "NavBar": {
+    "about": true,
+    "projects": true,
+    "skills": true,
+    "experience": true,
+    "contact": true
+  },
+  "About": {
+    "name": {
+      "content": " Gerges Remon!",
+      "gradient": "linear-gradient(90deg, #2A7B9B, #57C785)"
+    },
+    "imgUrl": "https://i.ibb.co/RkVz84yx/Screenshot-2025-07-15-153118-removebg-preview.png",
+    "availability": true,
+    "tags": [
+      "UI/UX Enthusiast",
+      "Problem Solver",
+      "Frontend Developer",
+      "React FramWork"
+    ],
+    "resumeButton": {
+      "resumeLink": "https://drive.google.com/file/d/1GuRobxKde8gnFWZL6UBdTEZV4gT6J7xT/view?usp=drive_link",
+      "resumeGradient": "linear-gradient(90deg, #2A7B9B, #57C785)",
+      "resumeOriginalGradient": "linear-gradient(90deg, #2A7B9B, #57C785)",
+      "resumeColor1": "#2A7B9B",
+      "resumeColor2": "#57C785"
+    },
+    "links": [
+      {
+        "id": "github",
+        "link": "https://github.com/G-Remon",
+        "preview": true
+      },
+      {
+        "id": "linkedin",
+        "link": "https://www.linkedin.com/in/gerges-remon-2625000n/",
+        "preview": true
+      }
+
+    ],
+    "description": {
+      "content": "👨‍💻 Professional Frontend Engineer with React and Next.js 🏆Use many React libraries in real projects 🌱 Always learning - Excited to explore new technologies and frameworks  ",
+      "highlights": []
+    }
+  },
+  "Projects": {
+    "projects": [
+      {
+        "title": "E-commerce",
+        "description": "built full online store with React, Redux Toolkit, React Query\nproduct listing, shopping cart, checkout flow\nresponsive design works on mobile and desktop\nintegrated real APIs for products and orders\n\nused reusable components and clean state management\ndeployed live on Vercel for real users",
+        "tech": [
+          {
+            "name": "React",
+            "color": "text-indigo-400"
+          },
+          {
+            "name": "Tailwind CSS",
+            "color": "text-pink-400"
+          },
+          {
+            "name": "React Icons",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "React Query",
+            "color": "text-indigo-400"
+          },
+          {
+            "name": "Swiper",
+            "color": "text-orange-400"
+          },
+          {
+            "name": "Framer Motion",
+            "color": "text-orange-400"
+          }
+        ],
+        "imgSrc": "https://i.ibb.co/xSfcsRnZ/Screenshot-2025-07-15-150931.png",
+        "liveDemo": "https://ecommerce-2zg8.vercel.app/",
+        "repo": "https://github.com/G-Remon/ecommerce.git"
+      },
+      {
+        "title": "Weather",
+        "description": "fetches real-time weather data using OpenWeather API\nshows 3-day forecast starting today\n\nhandles API errors and loading states\n\nresponsive UI for phone and desktop\ntested core functions for accurate data",
+        "tech": [
+          {
+            "name": "JavaScript ",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "OpenWeather API",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "Responsive",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "Bootstrap",
+            "color": "text-orange-400"
+          },
+          {
+            "name": "Css",
+            "color": "text-pink-400"
+          },
+          {
+            "name": "HTML",
+            "color": "text-red-400"
+          }
+        ],
+        "imgSrc": "https://i.ibb.co/d0y94Sfs/Screenshot-2025-07-15-151509.png",
+        "liveDemo": "https://g-remon.github.io/weather/",
+        "repo": "https://github.com/G-Remon/weather.git"
+      },
+      {
+        "title": "Portfolio",
+        "description": "Simple personal portfolio using pure HTML and CSS. One page layout with sections: Home, About, Projects, Contact. Clean responsive design without frameworks. Shows projects with title, image, description, and links. Easy to edit and deploy. Good for beginners learning structure and styling.",
+        "tech": [
+          {
+            "name": "HTML",
+            "color": "text-orange-400"
+          },
+          {
+            "name": "CSS",
+            "color": "text-blue-400"
+          }
+        ],
+        "imgSrc": "https://i.ibb.co/DT8SYMZ/Screenshot-2025-07-15-152241.png",
+        "liveDemo": "https://g-remon.github.io/folio/",
+        "repo": "https://github.com/G-Remon/folio.git"
+      },
+      {
+        "title": "Games",
+        "description": "🧠 Key Concepts API Integration: Uses JavaScript fetch to get live game data\nDynamic Cards: Builds game cards from API results.\nDetails Page: Opens detailed info for each game.\nExternal Links: Direct button to visit the official game website\nVanilla JS: No frameworks, only pure JavaScript\n⚙️ Tech Stack HTML\nCSS",
+        "tech": [
+          {
+            "name": "HTML",
+            "color": "text-orange-400"
+          },
+          {
+            "name": "CSS",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "JavaScript",
+            "color": "text-yellow-400"
+          },
+          {
+            "name": "Bootstrap",
+            "color": "text-pink-400"
+          }
+        ],
+        "imgSrc": "https://i.ibb.co/8LD2Sx47/Screenshot-2025-07-15-152510.png",
+        "liveDemo": "https://g-remon.github.io/games/",
+        "repo": "https://github.com/G-Remon/games.git"
+      }
+    ],
+    "title": "linear-gradient(90deg, #3b82f6, #a855f7, #9333ea)"
+  },
+  "Skills": {
+    "skills": [
+      {
+        "icon": "TbBrandCpp",
+        "name": "C++",
+        "color": "#00599C"
+      },
+      {
+        "icon": "SiJavascript",
+        "name": "JavaScript",
+        "color": "#F7DF1E"
+      },
+      {
+        "icon": "SiTypescript",
+        "name": "TypeScript",
+        "color": "#3178C6"
+      },
+      {
+        "icon": "SiHtml5",
+        "name": "HTML5",
+        "color": "#E34F26"
+      },
+      {
+        "icon": "SiCss3",
+        "name": "CSS3",
+        "color": "#1572B6"
+      },
+      {
+        "icon": "SiTailwindcss",
+        "name": "Tailwind",
+        "color": "#06B6D4"
+      },
+      {
+        "icon": "SiBootstrap",
+        "name": "Bootstrap",
+        "color": "#7952B3"
+      },
+      {
+        "icon": "SiReact",
+        "name": "React",
+        "color": "#61DAFB"
+      },
+      {
+        "icon": "SiNextdotjs",
+        "name": "Next.js",
+        "color": "#FFFFFF"
+      },
+      {
+        "icon": "SiRedux",
+        "name": "Redux",
+        "color": "#764ABC"
+      },
+      {
+        "icon": "SiGithub",
+        "name": "GitHub",
+        "color": "#FFFFFF"
+      },
+      {
+        "icon": "SiGit",
+        "name": "Git",
+        "color": "#F05032"
+      },
+      {
+        "icon": "SiSass",
+        "name": "Sass",
+        "color": "#CC6699"
+      }
+    ],
+    "title": "linear-gradient(90deg, #3b82f6, #a855f7, #9333ea)"
+  },
+  "Experiences": {
+    "experience": [
+      {
+        "title": "Bachelor's degree | Computer Science",
+        "company": "New Cairo Academy",
+        "period": "October 2023 - October 2027",
+        "description": "I studied computer and systems engineering, which provided me with a solid foundation in programming, algorithms, data structures, and software engineering. I also developed a strong understanding of computer architecture, operating systems, and computer networks.",
+        "icon": "Education",
+        "left": false
+      },
+      {
+        "title": "Front-End Developer",
+        "company": "Route Academy",
+        "period": "Dec 2024 – Jul 2025",
+        "description": "finished 150+ training hours in HTML, CSS, JavaScript, React, TypeScript\nbuilt and deployed real web apps using modern stack\nused libraries like React Router, Redux, Tailwind, Framer Motion\n\npracticed API integration, state management, reusable components\nworked with Git and GitHub to manage code\ncontributed to open-source tasks and workshops\nimproved teamwork and communication during projects",
+        "icon": "Development",
+        "left": true
+      }
+    ],
+    "title": "linear-gradient(90deg, #3b82f6, #a855f7, #9333ea)"
+  },
+  "Contact": {
+    "contact": {
+      "email": "gergsremon26@gmail.com",
+      "phone": "01001016693",
+      "location": "Cairo, Egypt"
+    },
+    "title": "linear-gradient(90deg, #3b82f6, #a855f7, #9333ea)"
+  }
+}
