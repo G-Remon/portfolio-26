@@ -80,6 +80,39 @@
         "repo": "https://github.com/G-Remon/ecommerce.git"
       },
       {
+        "title": "Mawazin Al-Sharq",
+        "description": "Real estate platform built with React. Optimized for high performance and strong SEO. Features advanced property search, filtering, and contract management. Fully responsive with a smooth user experience. Serves individual buyers and investors. Deployed for real users with clean architecture and modern development standards.",
+        "tech": [
+          {
+            "name": "React",
+            "color": "text-indigo-400"
+          },
+          {
+            "name": "Tailwind CSS",
+            "color": "text-pink-400"
+          },
+          {
+            "name": "React Icons",
+            "color": "text-blue-400"
+          },
+          {
+            "name": "React Query",
+            "color": "text-indigo-400"
+          },
+          {
+            "name": "Swiper",
+            "color": "text-orange-400"
+          },
+          {
+            "name": "Framer Motion",
+            "color": "text-orange-400"
+          }
+        ],
+        "imgSrc": "/assets/Mawaazen image.png",
+        "liveDemo": "https://mwazeen-elshark.vercel.app/",
+        "repo": "https://github.com/G-Remon/mwazeen-elshark.git"
+      },
+      {
   "title": "AI Resume Analyzer",
   "description": "Analyzes resumes with AI to highlight strengths and weaknesses\nCompares CVs against job descriptions with ATS system\nUses Claude-Sonnet-4 LLM to generate feedback and suggestions\nResponsive design for phone and desktop\nBuilt with modern front-end stack (React, TypeScript, Tailwind)",
   "tech": [
@@ -108,7 +141,7 @@
       "color": "text-green-400"
     }
   ],
-  "imgSrc": "https://cdn.corenexis.com/file/?serve=7264231168.png&token=5882d56489ff079bd679f7ceb791fdc2ffe8f189e3f83f33a35396efe2cfcc74.NzI2NDIzMTE2OC5wbmd8MTc1NTY4NjMxMw==",
+  "imgSrc": "/assets/Ai resume image.png",
   "liveDemo": "https://ai-analyzer-cv.vercel.app/",
   "repo": "https://github.com/G-Remon/ai-analyzer-cv.git"
 },
@@ -279,7 +312,16 @@
         "description": "finished 150+ training hours in HTML, CSS, JavaScript, React, TypeScript\nbuilt and deployed real web apps using modern stack\nused libraries like React Router, Redux, Tailwind, Framer Motion\n\npracticed API integration, state management, reusable components\nworked with Git and GitHub to manage code\ncontributed to open-source tasks and workshops\nimproved teamwork and communication during projects",
         "icon": "Development",
         "left": true
-      }
+      },
+      {
+  "title": "Front-End Developer",
+  "company": "Freelance Project – Mawazin Al-Sharq",
+  "period": "october 2025 – december 2025",
+  "description": "Developed and launched a full real estate platform from scratch using React. Focused on high performance and strong SEO to support real users. Built advanced property search, filtering, and contract management features. Implemented responsive UI optimized for both mobile and desktop. Integrated real APIs to handle listings and inquiries. Applied clean architecture, reusable components, and modern state management. Used Git and GitHub for version control and deployment on Vercel. Collaborated closely with the client to refine requirements and deliver a production-ready solution.",
+  "icon": "Development",
+  "right": true
+}
+      
     ],
     "title": "linear-gradient(90deg, #3b82f6, #a855f7, #9333ea)"
   },
