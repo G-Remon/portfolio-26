@@ -11,7 +11,7 @@
       "content": " Gerges Remon!",
       "gradient": "linear-gradient(90deg, #2A7B9B, #57C785)"
     },
-    "imgUrl": "https://i.ibb.co/RkVz84yx/Screenshot-2025-07-15-153118-removebg-preview.png",
+    "imgUrl": "/assets/main image.png",
     "availability": true,
     "tags": [
       "UI/UX Enthusiast",
@@ -75,7 +75,7 @@
             "color": "text-orange-400"
           }
         ],
-        "imgSrc": "https://i.ibb.co/xSfcsRnZ/Screenshot-2025-07-15-150931.png",
+        "imgSrc": "/assets/ecomerce image.png",
         "liveDemo": "https://ecommerce-2zg8.vercel.app/",
         "repo": "https://github.com/G-Remon/ecommerce.git"
       },
@@ -174,7 +174,7 @@
             "color": "text-red-400"
           }
         ],
-        "imgSrc": "https://i.ibb.co/d0y94Sfs/Screenshot-2025-07-15-151509.png",
+        "imgSrc": "/assets/Weather image.png",
         "liveDemo": "https://g-remon.github.io/weather/",
         "repo": "https://github.com/G-Remon/weather.git"
       },
@@ -191,7 +191,7 @@
             "color": "text-blue-400"
           }
         ],
-        "imgSrc": "https://i.ibb.co/DT8SYMZ/Screenshot-2025-07-15-152241.png",
+        "imgSrc": "/assets/port image.png",
         "liveDemo": "https://g-remon.github.io/folio/",
         "repo": "https://github.com/G-Remon/folio.git"
       },
@@ -218,7 +218,7 @@
             "color": "text-pink-400"
           }
         ],
-        "imgSrc": "https://i.ibb.co/8LD2Sx47/Screenshot-2025-07-15-152510.png",
+        "imgSrc": "/assets/games image.png",
         "liveDemo": "https://g-remon.github.io/games/",
         "repo": "https://github.com/G-Remon/games.git"
       }
