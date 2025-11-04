@@ -36,7 +36,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative my-32 mx-auto max-w-6xl px-4 space-y-6"
+      className="relative my-20 md:my-32 lg:my-40 mx-auto max-w-7xl px-4 sm:px-6 md:px-8 space-y-8 md:space-y-12"
     >
       <TitleTwo gradient={templateData.Experiences.title}>
         My Experience
@@ -44,12 +44,12 @@ const Experience = () => {
 
       {isLargeScreen ? (
         <>
-          <div className="absolute left-1/2 w-1 h-full bg-white/60 transform -translate-x-1/2" />
-          <ul className="py-4 space-y-12 relative">
+          <div className="absolute left-1/2 w-0.5 md:w-1 h-full bg-gradient-to-b from-blue-500/60 via-purple-500/60 to-purple-600/60 transform -translate-x-1/2 rounded-full" />
+          <ul className="py-4 md:py-8 space-y-12 md:space-y-16 relative">
             {data.map((item, index) => {
               if (item.left === true) {
                 return (
-                  <div key={index} className="relative">
+                  <div key={index} className="relative animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                     <ExperienceCardLeft
                       date={item.period || ""}
                       title={item.title}
@@ -62,7 +62,7 @@ const Experience = () => {
                 );
               } else {
                 return (
-                  <div key={index} className="relative">
+                  <div key={index} className="relative animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                     <ExperienceCardRight
                       date={item.period || ""}
                       title={item.title}
@@ -78,10 +78,10 @@ const Experience = () => {
         </>
       ) : (
         <>
-          <div className="absolute w-1 h-full bg-white/60 transform -translate-x-1/2" />
-          <ul className="space-y-12">
+          <div className="absolute left-4 md:left-8 w-0.5 md:w-1 h-full bg-gradient-to-b from-blue-500/60 via-purple-500/60 to-purple-600/60 rounded-full" />
+          <ul className="space-y-12 md:space-y-16 ml-8 md:ml-12">
             {data.map((item, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
                 <ExperienceCardLeft
                   date={item.period || ""}
                   title={item.title}

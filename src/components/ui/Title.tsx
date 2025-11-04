@@ -8,11 +8,11 @@ interface TitleProps {
 const Title = ({ name }: TitleProps) => {
   return (
     <>
-      <h1 className="font-bold text-4xl tracking-tight">
-        Hello, I am
-        <span className="relative text-4xl sm:text-5xl md:text-6xl inline-block">
+      <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight mb-4">
+        <span className="text-white/90">Hello, I am</span>
+        <span className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl inline-block ml-2 sm:ml-3">
           <span
-            className="relative outline-none focus:border-b-2 focus:border-purple-500"
+            className="relative outline-none focus:border-b-2 focus:border-purple-500 animate-gradient"
             style={{
               backgroundImage: name.gradient,
               backgroundSize: "200% 200%",
@@ -23,7 +23,7 @@ const Title = ({ name }: TitleProps) => {
             {name.content}
           </span>
 
-          <span className="absolute -bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-purple-600/20 blur-md rounded-full" />
+          <span className="absolute -bottom-1 left-0 right-0 h-2 sm:h-3 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-purple-600/30 blur-lg rounded-full" />
         </span>
       </h1>
     </>

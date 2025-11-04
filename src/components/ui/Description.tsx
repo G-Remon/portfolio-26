@@ -61,8 +61,8 @@ const Description = ({ content, highlights }: DescriptionProps) => {
     <div className="relative group">
       <div
         id="content"
-        className="relative whitespace-pre-line max-w-[620px] text-gray-700 dark:text-white/80 
-                 text-lg md:text-xl leading-relaxed cursor-text"
+        className="relative whitespace-pre-line max-w-[620px] text-white/75 
+                 text-base sm:text-lg md:text-xl leading-relaxed md:leading-relaxed cursor-text"
       >
         {segments.map((segment) => (
           <span

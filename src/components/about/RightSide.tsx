@@ -69,17 +69,16 @@ const RightSide = ({
         highlights={description.highlights}
         content={description.content}
       />
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 mt-8 md:mt-10">
         <div className="relative group">
           <button
-            className="relative px-8 py-4 font-bold rounded-lg transition-all duration-300 group-hover:scale-105 cursor-pointer"
+            className="btn-primary relative px-6 md:px-8 py-3 md:py-4 font-bold rounded-xl transition-all duration-300 group-hover:scale-105 cursor-pointer overflow-hidden"
             style={{
               background: resumeButton.resumeGradient,
               boxShadow: "none",
-              transition: "all 0.3s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = `0 0 25px -5px ${resumeButton.resumeColor1}`;
+              e.currentTarget.style.boxShadow = `0 0 30px -5px ${resumeButton.resumeColor1}, 0 4px 20px rgba(0, 0, 0, 0.3)`;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.boxShadow = "none";
@@ -89,31 +88,37 @@ const RightSide = ({
               href={resumeButton.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex items-center gap-2"
+              className="relative flex items-center gap-2 z-10"
             >
-              <span className="bg-gradient-to-r from-white to-[#d4fff1] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white to-[#d4fff1] bg-clip-text text-transparent font-semibold text-sm md:text-base">
                 View My Resume
               </span>
-              <FaArrowRight />
+              <FaArrowRight className="text-white transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </button>
         </div>
 
-        <ul className="flex items-center gap-4 ml-2">
+        <ul className="flex items-center gap-3 md:gap-4">
           {links
             .filter(({ preview }) => preview)
             .map(({ id, link }) => {
               const IconComponent = getIcon(id);
               return (
                 <li
-                  className="relative p-2 rounded-full hover:bg-white/10 transition-all duration-300 group text-white"
+                  className="relative group/social"
                   key={id}
                 >
-                  <a href={link} target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href={link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="relative p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 group-hover/social:scale-110 block"
+                  >
                     <IconComponent
-                      fontSize={32}
-                      className="drop-shadow-lg transition-all duration-300 hover:scale-110"
+                      fontSize={28}
+                      className="text-white/90 group-hover/social:text-white transition-all duration-300 drop-shadow-lg"
                     />
+                    <span className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"></span>
                   </a>
                 </li>
               );

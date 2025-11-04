@@ -10,13 +10,13 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="my-32 mx-auto max-w-6xl px-4 space-y-6 relative"
+      className="my-20 md:my-32 lg:my-40 mx-auto max-w-7xl px-4 sm:px-6 md:px-8 space-y-8 md:space-y-12 relative"
     >
       <TitleTwo gradient={title}>My Skills</TitleTwo>
 
       <SkillsDescription />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-8">
         {skills.map((skill, index) => {
           const Icon = skill.icon;
           return (
