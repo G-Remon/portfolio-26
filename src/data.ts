@@ -1,0 +1,103 @@
+export type Project = {
+  slug: string; title: string; category: string[]; summary: string; problem: string;
+  role: string; tools: string[]; image?: string; outcome: string; context: string;
+  approach: string[]; solution: string[]; learning: string; liveUrl?: string;
+  githubUrl?: string; featured?: boolean;
+};
+
+export const profile = {
+  name: "Gerges Remon", email: "gergsremon26@gmail.com", phone: "01001016693",
+  location: "Cairo, Egypt",
+  resume: "https://drive.google.com/file/d/1M5xh7AB5blLfIV-7pTMxTPsqZ10xls_I/view?usp=sharing",
+  github: "https://github.com/G-Remon",
+  linkedin: "https://www.linkedin.com/in/gerges-remon-2625000n/",
+};
+
+export const projects: Project[] = [
+  {
+    slug: "business-productivity-system", title: "Business Productivity & Attendance System",
+    category: ["Automation", "Business Systems", "Data"],
+    summary: "A structured reporting system that turns recurring field updates into usable operational records.",
+    problem: "Weekly updates and attendance records needed a consistent structure that reduced repetitive entry and made follow-up easier.",
+    role: "Workflow analysis, information architecture, spreadsheet system design, Apps Script automation, and reporting logic.",
+    tools: ["Google Sheets", "Google Apps Script", "Google Forms"],
+    outcome: "Created one connected workflow for collecting, organizing, and reviewing recurring operational data.",
+    context: "Built for a real engineering and construction-solutions environment. Screens and data are intentionally anonymized to protect internal information.",
+    approach: ["Mapped the recurring reporting flow", "Standardized inputs and validation", "Separated collection, processing, and review", "Designed around future date and team changes"],
+    solution: ["Multi-day reporting workflow", "Automated row generation", "Attendance and absence classification", "Management-ready summary views"],
+    learning: "The strongest automation starts with understanding how people already work—not with writing the script first.", featured: true,
+  },
+  {
+    slug: "monthly-performance-analytics", title: "Monthly Performance Analytics",
+    category: ["Automation", "Data", "Business Systems"],
+    summary: "A reporting layer for comparing recurring work, surfacing patterns, and improving review quality.",
+    problem: "Operational records existed, but monthly comparison and recurring-project analysis required too much manual review.",
+    role: "Data structure, comparison logic, validation rules, reporting design, and dashboard refinement.",
+    tools: ["Google Sheets", "Apps Script", "Excel"],
+    outcome: "Made recurring records easier to compare and prepared the workflow for more consistent management reporting.",
+    context: "An internal business system presented here at workflow level only; private numbers and business logic are excluded.",
+    approach: ["Defined meaningful monthly comparisons", "Handled duplicates and incomplete records", "Separated raw data from reporting", "Designed clear review states"],
+    solution: ["Monthly comparison views", "Data-quality controls", "Recurring work analysis", "Reusable reporting structure"],
+    learning: "A dashboard is only reliable when the data-entry and validation layers are designed with equal care.", featured: true,
+  },
+  {
+    slug: "mawazin-al-sharq", title: "Mawazin Al-Sharq", category: ["Web"],
+    summary: "A responsive real-estate experience built around property discovery and clear user journeys.",
+    problem: "The platform needed to present property information clearly and support search, filtering, and inquiry flows across devices.",
+    role: "Front-end development, UI implementation, responsive behavior, API integration, and deployment.",
+    tools: ["React", "Tailwind CSS", "React Query", "Swiper", "Vercel"], image: "/assets/Mawaazen image.png",
+    outcome: "Delivered a production website with reusable components and responsive property browsing.",
+    context: "A freelance web project developed from requirements through launch.",
+    approach: ["Translated requirements into page flows", "Built reusable property UI", "Handled loading and API states", "Optimized layouts for mobile and desktop"],
+    solution: ["Property discovery interface", "Search and filtering", "Responsive content hierarchy", "Production deployment"],
+    learning: "Real product work requires balancing technical structure with the clarity users need to make decisions.",
+    liveUrl: "https://www.mawazin-alsharq.com/", githubUrl: "https://github.com/G-Remon/mwazeen-elshark", featured: true,
+  },
+  {
+    slug: "ai-resume-analyzer", title: "AI Resume Analyzer", category: ["AI", "Web"],
+    summary: "An AI-assisted web experience for reviewing resumes against job requirements.",
+    problem: "Candidates need a clearer way to identify gaps between a resume and a target job description.",
+    role: "Front-end implementation, interaction design, responsive UI, and AI service integration.",
+    tools: ["React", "TypeScript", "Tailwind CSS", "Claude Sonnet", "REST API"], image: "/assets/Ai resume image.png",
+    outcome: "Built a responsive workflow that presents AI-generated feedback in an understandable format.",
+    context: "A web project exploring practical, transparent use of generative AI in a focused user workflow.",
+    approach: ["Defined a simple input-to-feedback flow", "Structured the response for scanning", "Designed clear loading and feedback states", "Kept AI output framed as guidance"],
+    solution: ["Resume and job-description comparison", "Structured feedback", "Responsive interface", "AI-assisted recommendations"],
+    learning: "AI becomes useful when its output is framed, reviewed, and presented around a specific decision.",
+    liveUrl: "https://ai-analyzer-cv.vercel.app/", githubUrl: "https://github.com/G-Remon/ai-analyzer-cv", featured: true,
+  },
+  {
+    slug: "ecommerce-experience", title: "E-commerce Experience", category: ["Web"],
+    summary: "A complete storefront interface covering product discovery, cart, and checkout flows.",
+    problem: "Build a coherent online-shopping journey with live data, reusable UI, and reliable state management.",
+    role: "Front-end architecture, UI development, API integration, state management, and responsive implementation.",
+    tools: ["React", "Redux Toolkit", "React Query", "Tailwind CSS", "Vercel"], image: "/assets/ecomerce image.png",
+    outcome: "Delivered a responsive application with reusable commerce components and end-to-end shopping flows.",
+    context: "A front-end product project focused on application architecture and real API behavior.",
+    approach: ["Mapped the shopping journey", "Separated server and client state", "Built reusable product components", "Handled loading, error, and empty states"],
+    solution: ["Product browsing", "Cart management", "Checkout flow", "Responsive interaction patterns"],
+    learning: "Clear state boundaries make complex interfaces easier to maintain and easier for users to trust.",
+    liveUrl: "https://ecommerce-2zg8.vercel.app/", githubUrl: "https://github.com/G-Remon/ecommerce",
+  },
+  {
+    slug: "corporate-visual-communication", title: "Corporate Visual Communication", category: ["Creative", "Business Systems"],
+    summary: "Research-backed presentations, profiles, catalogues, and product content for technical audiences.",
+    problem: "Complex engineering products and company information needed clearer structure, stronger hierarchy, and consistent communication.",
+    role: "Research, content architecture, business writing, visual direction, layout, and production.",
+    tools: ["PowerPoint", "InDesign", "Photoshop", "Generative AI"],
+    outcome: "Created reusable communication formats for management, consultants, engineers, and digital audiences.",
+    context: "Ongoing corporate work in construction chemicals, expansion joints, and interior solutions. Client-sensitive materials are not published.",
+    approach: ["Researched product and audience context", "Built an information hierarchy", "Translated technical details into usable content", "Applied a consistent visual system"],
+    solution: ["Executive presentations", "Company profiles", "Product catalogues", "Technical social content"],
+    learning: "Technical communication works best when accuracy, audience context, and visual hierarchy are developed together.",
+  },
+];
+
+export const capabilities = [
+  { title: "Automation & Business Systems", description: "I map repetitive workflows and turn them into structured tools that support real operations.", solves: "Reporting, attendance, data entry, recurring tasks", tools: ["Apps Script", "Google Sheets", "Google Forms"] },
+  { title: "Data & Analytics", description: "I clean, structure, and analyze business data so it becomes easier to understand and act on.", solves: "Data quality, KPI tracking, comparison, reporting", tools: ["Excel", "SQL", "Power BI", "Power Query"] },
+  { title: "AI-Assisted Workflows", description: "I use generative AI deliberately across research, ideation, content, visuals, and production.", solves: "Research synthesis, production support, ideation", tools: ["Prompt Engineering", "AI Research", "Image & Video AI"] },
+  { title: "Content & Visual Communication", description: "I connect business context with content systems, product storytelling, and corporate communication.", solves: "Technical content, campaigns, product explanation", tools: ["Content Strategy", "Photoshop", "Social Content"] },
+  { title: "Design & Presentation", description: "I structure complex information into clear presentations, profiles, catalogues, and visual systems.", solves: "Information hierarchy, executive communication", tools: ["PowerPoint", "InDesign", "Photoshop"] },
+  { title: "Web & Front-End Development", description: "I build responsive digital interfaces with clean component structures and practical user journeys.", solves: "Landing pages, corporate sites, product interfaces", tools: ["React", "TypeScript", "Tailwind", "Vercel"] },
+];
