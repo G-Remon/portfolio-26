@@ -21,32 +21,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gergis-portfolio.vercel.app/work/business-productivity-system</loc>
+    <loc>https://gergis-portfolio.vercel.app/work/construction-chemicals-catalogue</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gergis-portfolio.vercel.app/work/monthly-performance-analytics</loc>
+    <loc>https://gergis-portfolio.vercel.app/work/power-bi-dashboard</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gergis-portfolio.vercel.app/work/data-and-power-bi</loc>
+    <loc>https://gergis-portfolio.vercel.app/work/games-web-application</loc>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gergis-portfolio.vercel.app/work/mawazin-al-sharq</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gergis-portfolio.vercel.app/work/corporate-visual-communication</loc>
-    <priority>0.7</priority>
-  </url>
-  <!-- ai-resume-analyzer and ecommerce-experience left off or optional, adding them -->
-  <url>
-    <loc>https://gergis-portfolio.vercel.app/work/ai-resume-analyzer</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://gergis-portfolio.vercel.app/work/ecommerce-experience</loc>
-    <priority>0.6</priority>
   </url>
 </urlset>

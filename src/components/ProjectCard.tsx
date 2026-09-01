@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import type { Project } from "../data";
 
 export function ProjectVisual({ project }: { project: Project }) {
-  const imageSrc = project.visualEvidence && project.visualEvidence.length > 0 ? project.visualEvidence[0] : null;
+  const imageSrc = project.image || null;
   
   return (
     <div className={imageSrc ? "project-visual has-image" : "project-visual system-visual"}>
@@ -47,7 +47,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
           </div>
           <div>
             <dt>Result</dt>
-            <dd>{project.result}</dd>
+            <dd>{project.outcome}</dd>
           </div>
         </dl>
         <div className="tool-row">

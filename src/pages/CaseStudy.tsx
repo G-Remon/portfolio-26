@@ -22,7 +22,7 @@ export function CaseStudy() {
       <PageMeta 
         title={`${p.title} — Gerges Remon`}
         description={p.summary}
-        image={p.visualEvidence?.[0]}
+        image={p.image}
       />
       
       <section className="case-hero">
@@ -51,7 +51,7 @@ export function CaseStudy() {
             </div>
             <div>
               <span>Result</span>
-              <p>{p.result}</p>
+              <p>{p.outcome}</p>
             </div>
           </div>
         </div>
@@ -71,18 +71,8 @@ export function CaseStudy() {
             <p>{p.problem}</p>
           </article>
 
-          {p.constraints && p.constraints.length > 0 && (
-            <article>
-              <span>03 / Constraints</span>
-              <h2>Project boundaries.</h2>
-              <ul>
-                {p.constraints.map(x => <li key={x}>{x}</li>)}
-              </ul>
-            </article>
-          )}
-
           <article>
-            <span>04 / Approach</span>
+            <span>03 / Approach</span>
             <h2>How I framed the work.</h2>
             <ul>
               {p.approach.map(x => <li key={x}>{x}</li>)}
@@ -90,44 +80,22 @@ export function CaseStudy() {
           </article>
 
           <article>
-            <span>05 / Solution</span>
+            <span>04 / Solution</span>
             <h2>What I built or created.</h2>
             <ul>
               {p.solution.map(x => <li key={x}>{x}</li>)}
             </ul>
           </article>
 
-          {p.workflow && p.workflow.length > 0 && (
-            <article>
-              <span>06 / Workflow & Architecture</span>
-              <h2>How it operates.</h2>
-              <ul>
-                {p.workflow.map(x => <li key={x}>{x}</li>)}
-              </ul>
-            </article>
-          )}
-
-          {p.visualEvidence && p.visualEvidence.length > 1 && (
-            <article>
-              <span>07 / Visual Evidence</span>
-              <h2>Additional views.</h2>
-              <div style={{ display: 'grid', gap: '20px', width: '100%' }}>
-                {p.visualEvidence.slice(1).map((img, i) => (
-                  <img key={i} src={img} alt={`${p.title} extra view ${i+1}`} style={{ width: '100%', borderRadius: 'var(--radius)', border: '1px solid var(--line)' }} loading="lazy" />
-                ))}
-              </div>
-            </article>
-          )}
-
           <article>
-            <span>08 / Reflection</span>
+            <span>05 / Reflection</span>
             <h2>What the work reinforced.</h2>
             <p>{p.learning}</p>
           </article>
 
           {hasLinks && (
             <article>
-              <span>09 / Links</span>
+              <span>06 / Links</span>
               <h2>See the work.</h2>
               <div className="actions">
                 {p.liveUrl && (
