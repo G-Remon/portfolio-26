@@ -1,6 +1,6 @@
 export type Project = {
   slug: string; title: string; category: string[]; summary: string; problem: string;
-  role: string; tools: string[]; image?: string; outcome: string; context: string;
+  role: string; tools: string[]; image?: string; imageFit?: "cover" | "contain"; outcome: string; context: string;
   approach: string[]; solution: string[]; learning: string; liveUrl?: string;
   githubUrl?: string; featured?: boolean;
 };
@@ -33,12 +33,26 @@ export const projects: Project[] = [
     summary: "A reporting layer for comparing recurring work, surfacing patterns, and improving review quality.",
     problem: "Operational records existed, but monthly comparison and recurring-project analysis required too much manual review.",
     role: "Data structure, comparison logic, validation rules, reporting design, and dashboard refinement.",
-    tools: ["Google Sheets", "Apps Script", "Excel"],
+    tools: ["Google Sheets", "Apps Script", "Excel"], image: "/assets/monthly-performance-analytics.png", imageFit: "contain",
     outcome: "Made recurring records easier to compare and prepared the workflow for more consistent management reporting.",
     context: "An internal business system presented here at workflow level only; private numbers and business logic are excluded.",
     approach: ["Defined meaningful monthly comparisons", "Handled duplicates and incomplete records", "Separated raw data from reporting", "Designed clear review states"],
     solution: ["Monthly comparison views", "Data-quality controls", "Recurring work analysis", "Reusable reporting structure"],
     learning: "A dashboard is only reliable when the data-entry and validation layers are designed with equal care.", featured: true,
+  },
+  {
+    slug: "commercial-performance-dashboard", title: "Commercial Performance Dashboard",
+    category: ["Data", "Business Systems"],
+    summary: "An interactive Power BI dashboard that turns a large project dataset into a focused management overview.",
+    problem: "Project records needed to be consolidated into a clear view of volume, backing, pledged value, goals, status, hierarchy, launch trends, and currency distribution.",
+    role: "Data preparation, KPI definition, analytical structure, dashboard design, filtering, and visual storytelling.",
+    tools: ["Power BI", "Excel"], image: "/assets/commercial-performance-dashboard.png", imageFit: "contain",
+    outcome: "Created one interactive reporting view for exploring project performance across time, category, status, hierarchy, and currency.",
+    context: "A business intelligence portfolio project focused on transforming raw project data into a decision-ready dashboard.",
+    approach: ["Reviewed and prepared the Excel dataset", "Defined the primary management KPIs", "Structured analysis by status and hierarchy", "Added year and category filtering", "Balanced summary cards, comparison charts, and trend analysis"],
+    solution: ["Executive KPI cards", "Project-status comparison", "Project-hierarchy analysis", "Launch trend over time", "Pledged value by currency", "Interactive year and category filters"],
+    learning: "A useful dashboard is not a collection of charts; it is a clear sequence from headline performance to the detail behind it.",
+    featured: true,
   },
   {
     slug: "mawazin-al-sharq", title: "Mawazin Al-Sharq", category: ["Web"],
@@ -84,7 +98,7 @@ export const projects: Project[] = [
     summary: "Research-backed presentations, profiles, catalogues, and product content for technical audiences.",
     problem: "Complex engineering products and company information needed clearer structure, stronger hierarchy, and consistent communication.",
     role: "Research, content architecture, business writing, visual direction, layout, and production.",
-    tools: ["PowerPoint", "InDesign", "Photoshop", "Generative AI"],
+    tools: ["PowerPoint", "InDesign", "Photoshop", "Generative AI"], image: "/assets/indesign-corporate-profile.png", imageFit: "contain",
     outcome: "Created reusable communication formats for management, consultants, engineers, and digital audiences.",
     context: "Ongoing corporate work in construction chemicals, expansion joints, and interior solutions. Client-sensitive materials are not published.",
     approach: ["Researched product and audience context", "Built an information hierarchy", "Translated technical details into usable content", "Applied a consistent visual system"],
