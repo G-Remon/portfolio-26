@@ -58,8 +58,7 @@ export const projects: Project[] = [
       "Automated summaries generate daily management views"
     ],
     visualEvidence: [
-      // TODO: Add sanitized Google Sheets screenshot
-      // TODO: Add Google Forms workflow screenshot
+      "/assets/Screenshot 2026-09-02 000917.png"
     ],
     tools: ["Google Sheets", "Google Apps Script", "Google Forms"],
     result: "Centralized the workflow and reduced repetitive manual steps, creating a reusable reporting structure.",
@@ -94,8 +93,7 @@ export const projects: Project[] = [
       "Dashboard reflects corrected reporting"
     ],
     visualEvidence: [
-      // TODO: Add anonymized data structure screenshot
-      // TODO: Add monthly comparison view
+      "/assets/Screenshot 2026-09-02 001006.png"
     ],
     tools: ["Google Sheets", "Apps Script", "Excel"],
     result: "Made recurring records easier to compare and improved record consistency across the team.",
@@ -248,6 +246,43 @@ export const projects: Project[] = [
     result: "Created reusable communication formats for management, consultants, engineers, and digital audiences.",
     learning: "Technical communication works best when accuracy, audience context, and visual hierarchy are developed together.",
     featured: true,
+  },
+  {
+    slug: "ecommerce-experience",
+    title: "E-commerce Experience",
+    category: ["Web"],
+    summary: "A complete storefront interface covering product discovery, cart, and checkout flows.",
+    context: "A front-end product project focused on application architecture and real API behavior.",
+    problem: "Build a coherent online-shopping journey with live data, reusable UI, and reliable state management.",
+    role: "Front-end architecture, UI development, API integration, state management, and responsive implementation.",
+    constraints: ["Client-side state limits", "Simulating real checkout", "Handling API latency smoothly"],
+    approach: [
+      "Mapped the shopping journey",
+      "Separated server and client state",
+      "Built reusable product components",
+      "Handled loading, error, and empty states"
+    ],
+    solution: [
+      "Product browsing",
+      "Cart management",
+      "Checkout flow",
+      "Responsive interaction patterns"
+    ],
+    workflow: [
+      "User views product catalog",
+      "Redux manages cart state locally",
+      "React Query fetches details",
+      "Responsive checkout simulation"
+    ],
+    visualEvidence: [
+      "/assets/ecomerce image.png"
+    ],
+    tools: ["React", "Redux Toolkit", "React Query", "Tailwind CSS", "Vercel"],
+    result: "Delivered a responsive application with reusable commerce components and end-to-end shopping flows.",
+    learning: "Clear state boundaries make complex interfaces easier to maintain and easier for users to trust.",
+    liveUrl: "https://ecommerce-2zg8.vercel.app/",
+    githubUrl: "https://github.com/G-Remon/ecommerce",
+    featured: false,
   }
 ];
 

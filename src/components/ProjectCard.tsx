@@ -11,9 +11,14 @@ export function ProjectVisual({ project }: { project: Project }) {
       {imageSrc ? (
         <img src={imageSrc} alt={`${project.title} interface preview`} loading="lazy" />
       ) : (
-        <>
-          <span>INPUT</span><i/><span>LOGIC</span><i/><span>INSIGHT</span>
-        </>
+        <div style={{ padding: '40px', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          <span style={{ fontSize: '10px', letterSpacing: '0.12em', color: 'var(--navy)', fontWeight: 800, textTransform: 'uppercase' }}>
+            Visual Evidence
+          </span>
+          <p style={{ fontSize: '16px', color: 'var(--slate)', margin: 0, fontWeight: 500, lineHeight: 1.4 }}>
+            Confidential work — process shown with anonymized information
+          </p>
+        </div>
       )}
     </div>
   );
