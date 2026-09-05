@@ -1,48 +1,144 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { projects } from "../data";
 import { Layout } from "../components/layout";
-import { PageIntro } from "../components/Typography";
 import { ProjectCard } from "../components/ProjectCard";
 import { PageMeta } from "../components/PageMeta";
 
-export function Work() {
-  const cats = ["All", "Automation", "Data", "AI", "Creative", "Web", "Business Systems"];
-  const [filter, setFilter] = useState("All");
+const filters = [
+  "All",
+  "Automation",
+  "Data",
+  "AI",
+  "Creative",
+  "Web",
+  "Business Systems",
+] as const;
 
-  const list = useMemo(() => 
-    filter === "All" ? projects : projects.filter(p => p.category.includes(filter))
-  , [filter]);
+type Filter = (typeof filters)[number];
+
+const filterMap: Record<Exclude<Filter, "All">, string[]> = {
+  Automation: [
+    "Automation",
+    "Automation & Business Systems",
+  ],
+
+  Data: [
+    "Data",
+    "Data & Analytics",
+  ],
+
+  AI: [
+    "AI",
+    "AI-Assisted Workflows",
+  ],
+
+  Creative: [
+    "Creative",
+    "Content & Visual Communication",
+    "Design & Presentation",
+    "Brand Communication",
+    "Marketing",
+  ],
+
+  Web: [
+    "Web",
+    "Web & Front-End Development",
+  ],
+
+  "Business Systems": [
+    "Business Systems",
+    "Automation & Business Systems",
+  ],
+};
+
+export function Work() {
+  const [activeFilter, setActiveFilter] =
+    useState<Filter>("All");
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((project) =>
+          project.category.some((category) =>
+            filterMap[activeFilter].includes(category)
+          )
+        );
 
   return (
     <Layout>
-      <PageMeta 
-        title="Projects & Case Studies — Gerges Remon"
-        description="A portfolio of connected digital solutions across business automation, data analytics, web development, and technical communication."
+      <PageMeta
+        title="Work — Gerges Remon"
+        description="Selected projects across automation, data analytics, AI-assisted workflows, visual communication, business systems, and front-end development."
       />
-      <PageIntro 
-        eyebrow="Selected projects" 
-        title="Proof lives in the work." 
-        body="Projects are presented around the problem, my actual role, the process, and the result—without invented metrics or vague technology lists."
-      />
+
+      <section className="page-intro">
+        <div className="container">
+          <p className="eyebrow">
+            Selected Work
+          </p>
+
+          <h1>
+            Systems, insights,
+            <br />
+            communication &
+            <br />
+            digital experiences.
+          </h1>
+
+          <p>
+            A selection of real and practical work across
+            automation, analytics, AI-assisted workflows,
+            marketing, design, business systems, and web
+            development.
+          </p>
+        </div>
+      </section>
+
       <section className="section compact">
         <div className="container">
-          <div className="filters" aria-label="Filter projects">
-            {cats.map(c => (
-              <button 
-                className={filter === c ? "active" : ""} 
-                onClick={() => setFilter(c)} 
-                key={c}
-                aria-pressed={filter === c}
+
+          {/* FILTER BUTTONS */}
+
+          <div className="filters">
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                className={
+                  activeFilter === filter
+                    ? "active"
+                    : ""
+                }
+                onClick={() =>
+                  setActiveFilter(filter)
+                }
               >
-                {c}
+                {filter}
               </button>
             ))}
           </div>
+
+          {/* PROJECTS */}
+
           <div className="project-list">
-            {list.map((p, index) => (
-              <ProjectCard key={p.slug} project={p} index={index} />
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+              />
             ))}
           </div>
+
+          {/* EMPTY STATE */}
+
+          {filteredProjects.length === 0 && (
+            <div className="empty-projects">
+              <p>
+                No projects found in this category.
+              </p>
+            </div>
+          )}
+
         </div>
       </section>
     </Layout>

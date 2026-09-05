@@ -51,7 +51,7 @@ export function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img src="/assets/main image.png" alt="Portrait of Gerges Remon" fetchPriority="high" />
+            <img src="/assets/main.png" alt="Portrait of Gerges Remon" fetchPriority="high" />
             <div>
               <span>Based in Cairo</span>
               <strong>
