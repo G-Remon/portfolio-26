@@ -1,46 +1,52 @@
-import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+type Theme = "light" | "dark";
+
+const getInitialTheme = (): Theme => {
+  if (typeof window === "undefined") return "light";
+
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark" || saved === "light") return saved;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     const root = document.documentElement;
-    root.setAttribute("data-theme", theme);
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    const isDark = theme === "dark";
+
+    root.classList.toggle("dark", isDark);
+    root.dataset.theme = theme;
+
     localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark"
+    );
   };
+
+  const isDark = theme === "dark";
 
   return (
     <button
       type="button"
       className="theme-toggle-btn"
       onClick={toggleTheme}
-      aria-label={
-        theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
-      }
-      title={
-        theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
-      }
+      aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+      title={`Switch to ${isDark ? "light" : "dark"} theme`}
     >
-      {theme === "dark" ? (
+      {isDark ? (
         <Sun size={18} aria-hidden="true" />
       ) : (
         <Moon size={18} aria-hidden="true" />
