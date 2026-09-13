@@ -1,86 +1,36 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, Maximize2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import type { Project } from "../data";
-import { ImageLightbox } from "./ImageLightbox";
 
-export function ProjectVisual({ project }: { project: Project }) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-
-  const images =
-    project.gallery && project.gallery.length > 0
-      ? project.gallery
-      : project.image
-        ? [project.image]
-        : [];
-
+export function ProjectVisual({ project, onClick }: { project: Project; onClick?: () => void }) {
   return (
-    <>
-      <div
-        className={
-          project.image
-            ? "project-visual has-image"
-            : "project-visual system-visual"
-        }
-        onClick={(e) => {
-          // Stop click from bubbling up to the card — image opens lightbox only
-          e.stopPropagation();
-          if (project.image) {
-            setLightboxOpen(true);
-          }
-        }}
-        role={project.image ? "button" : undefined}
-        tabIndex={project.image ? 0 : undefined}
-        onKeyDown={(e) => {
-          if (project.image && (e.key === "Enter" || e.key === " ")) {
-            e.preventDefault();
-            e.stopPropagation();
-            setLightboxOpen(true);
-          }
-        }}
-        aria-label={
-          project.image
-            ? `View full size preview for ${project.title}`
-            : undefined
-        }
-      >
-        {project.image ? (
-          <>
-            <img
-              src={project.image}
-              alt={`${project.title} project preview`}
-              loading="lazy"
-              onError={(e) => {
-                console.error(
-                  `Failed to load project image: ${project.image}`
-                );
-                e.currentTarget.style.display = "none";
-              }}
-            />
-
-            <span className="image-expand-badge">
-              <Maximize2 size={13} aria-hidden="true" />
-              View full size
-            </span>
-          </>
-        ) : (
-          <div className="project-no-image">
-            <span>Visual Evidence</span>
-            <p>Project documentation available inside the case study.</p>
-          </div>
-        )}
-      </div>
-
-      {/* Lightbox Modal */}
-      {lightboxOpen && images.length > 0 && (
-        <ImageLightbox
-          images={images}
-          altPrefix={project.title}
-          onClose={() => setLightboxOpen(false)}
+    <div
+      className={
+        project.image
+          ? "project-visual has-image"
+          : "project-visual system-visual"
+      }
+      onClick={onClick}
+    >
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} project preview`}
+          loading="lazy"
+          onError={(e) => {
+            console.error(`Failed to load project image: ${project.image}`);
+            e.currentTarget.style.display = "none";
+          }}
         />
+      ) : (
+        <div className="project-no-image">
+          <span>Visual Evidence</span>
+          <p>Project documentation available inside the case study.</p>
+        </div>
       )}
-    </>
+    </div>
   );
 }
 
@@ -94,13 +44,9 @@ export function ProjectCard({
   const navigate = useNavigate();
 
   const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
-    // Do not navigate if the user clicked a nested interactive element
     const target = e.target as HTMLElement;
-    const isInteractive = target.closest(
-      "button, a, [role='button'], input, select, textarea, .project-visual"
-    );
-    if (isInteractive) return;
-
+    // Allow existing <a> links to handle themselves
+    if (target.closest("a")) return;
     navigate(`/work/${project.slug}`);
   };
 
@@ -127,7 +73,7 @@ export function ProjectCard({
         delay: Math.min(index * 0.06, 0.25),
       }}
     >
-      {/* PROJECT IMAGE — has its own click handler for lightbox */}
+      {/* PROJECT IMAGE — clicks navigate to case study */}
       <ProjectVisual project={project} />
 
       {/* PROJECT CONTENT */}
@@ -160,7 +106,6 @@ export function ProjectCard({
           ))}
         </div>
 
-        {/* This Link stops propagation itself since <a> is intercepted by the guard */}
         <Link
           className="text-link"
           to={`/work/${project.slug}`}

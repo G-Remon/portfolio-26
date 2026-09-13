@@ -659,7 +659,6 @@ img {
   align-items: center;
   justify-content: center;
   background: var(--project-visual-bg);
-  cursor: zoom-in;
 }
 
 .project-visual.has-image {
