@@ -16,6 +16,20 @@
   <meta name="twitter:card" content="summary_large_image" />
   <title>Gerges Remon — Digital Solutions, Automation, Data & Creative Technology</title>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gerges Remon","url":"https://gergis-portfolio.vercel.app/","jobTitle":"Digital Solutions & Creative Technology Specialist","sameAs":["https://github.com/G-Remon","https://www.linkedin.com/in/gerges-remon-2625000n/"]}</script>
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var theme = savedTheme ? savedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>

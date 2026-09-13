@@ -21,6 +21,57 @@ export type Project = {
   featured?: boolean;
 };
 
+export type Certificate = {
+  id: string;
+  title: string;
+  issuer: string;
+  category: string;
+  date?: string;
+  duration?: string;
+  image: string;
+  alt: string;
+  description: string;
+  highlight?: string;
+  topics?: string[];
+  orientation: "portrait" | "landscape";
+};
+
+export const certificates: Certificate[] = [
+  {
+    id: "sika-academy-training",
+    title: "Sika Academy Training",
+    issuer: "Sika Egypt Academy",
+    category: "Construction Chemicals & Business Knowledge",
+    date: "April 2026",
+    image: "/assets/sika.png",
+    alt: "Sika Egypt Academy training certificate awarded to Girgis Remon Fayez",
+    description:
+      "I joined Sika Academy to strengthen my understanding of the construction chemicals industry — from waterproofing and flooring to refurbishment and building finishing. The goal was to understand the business and its technical applications more deeply so I can create more accurate, relevant, and valuable content for my company.",
+    highlight: "Business & Technical Understanding for Better Content Creation",
+    topics: [
+      "Waterproofing & Roofing",
+      "Building Finish",
+      "Refurbishment",
+      "Flooring",
+      "Theoretical & Practical Principles",
+    ],
+    orientation: "portrait",
+  },
+  {
+    id: "front-end-diploma",
+    title: "Front-End Development Diploma",
+    issuer: "Route IT Training Center",
+    category: "Web Development",
+    duration: "150 Hours",
+    date: "July 2025",
+    image: "/assets/front.png",
+    alt: "Route IT Training Center Front-End Development diploma awarded to Girgis Remon Fayez",
+    description:
+      "Completed 150 hours of intensive Front-End Development training, strengthening my practical foundation in building modern, responsive, and interactive web experiences. Focused on responsive interfaces, problem solving, converting complex designs into functional user experiences, and modern front-end engineering.",
+    orientation: "landscape",
+  },
+];
+
 export const profile = {
   name: "Gerges Remon",
   email: "gergsremon26@gmail.com",
