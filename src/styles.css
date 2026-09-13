@@ -333,11 +333,71 @@ img {
 
 .menu-button {
   display: none;
-  border: 0;
-  background: none;
-  padding: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
   color: var(--ink);
   cursor: pointer;
+  place-items: center;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background-color 0.22s ease,
+              color 0.22s ease;
+}
+
+.menu-button:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-blue);
+  background: var(--card-bg);
+  color: var(--accent-blue);
+}
+
+.menu-button:active {
+  transform: scale(0.94);
+}
+
+.menu-button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.menu-icon-box {
+  position: relative;
+  width: 20px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.menu-line {
+  display: block;
+  width: 20px;
+  height: 1.75px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.22s ease,
+              width 0.22s ease;
+}
+
+.menu-button.open .top-line {
+  transform: translateY(6.125px) rotate(45deg);
+}
+
+.menu-button.open .mid-line {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-button.open .bot-line {
+  transform: translateY(-6.125px) rotate(-45deg);
 }
 
 
@@ -569,15 +629,24 @@ img {
   min-height: 500px;
   overflow: hidden;
   isolation: isolate;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--hover-border);
+  transform: translateY(-4px);
+  border-color: var(--accent-blue);
   box-shadow: var(--shadow-card-hover);
+}
+
+.project-card:active {
+  transform: translateY(-1px) scale(0.996);
+}
+
+.project-card:hover .project-copy .text-link svg {
+  transform: translateX(4px);
 }
 
 .project-visual {
@@ -779,6 +848,10 @@ img {
   margin-top: auto;
   color: var(--accent-text);
   transition: gap .2s ease, opacity .2s ease;
+}
+
+.project-copy .text-link svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-copy .text-link:hover {
@@ -2029,11 +2102,11 @@ textarea {
   }
 
   .menu-button {
-    display: block;
+    display: grid;
   }
 
   .main-nav {
-    display: none;
+    display: flex;
     position: absolute;
     top: 77px;
     left: 0;
@@ -2045,10 +2118,17 @@ textarea {
     align-items: stretch;
     gap: 8px;
     box-shadow: var(--shadow-nav);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .main-nav.open {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .main-nav a {
@@ -2699,5 +2779,42 @@ html.dark .back-button {
 
   .lightbox-counter {
     bottom: 16px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION OVERRIDES
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .menu-line {
+    transition: none !important;
+  }
+
+  .menu-button {
+    transition: none !important;
+  }
+
+  .project-card {
+    transition: border-color 0.15s ease !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+  }
+
+  .project-card:active {
+    transform: none !important;
+  }
+
+  .project-copy .text-link svg {
+    transition: none !important;
+  }
+
+  .project-card:hover .project-copy .text-link svg {
+    transform: none !important;
+  }
+
+  .main-nav {
+    transition: none !important;
   }
 }

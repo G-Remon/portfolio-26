@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ExternalLink, Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "../../data";
 import { ThemeToggle } from "../ThemeToggle";
 import { ScrollManager } from "../ScrollManager";
@@ -34,12 +34,18 @@ export function Header() {
           <ThemeToggle />
 
           <button
-            className="menu-button"
+            type="button"
+            className={open ? "menu-button open" : "menu-button"}
             onClick={() => setOpen(!open)}
             aria-expanded={open}
-            aria-label="Toggle navigation"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            title={open ? "Close navigation" : "Open navigation"}
           >
-            {open ? <X /> : <Menu />}
+            <span className="menu-icon-box" aria-hidden="true">
+              <span className="menu-line top-line" />
+              <span className="menu-line mid-line" />
+              <span className="menu-line bot-line" />
+            </span>
           </button>
         </div>
 

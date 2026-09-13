@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Maximize2 } from "lucide-react";
 import { motion } from "motion/react";
 import type { Project } from "../data";
@@ -23,7 +23,9 @@ export function ProjectVisual({ project }: { project: Project }) {
             ? "project-visual has-image"
             : "project-visual system-visual"
         }
-        onClick={() => {
+        onClick={(e) => {
+          // Stop click from bubbling up to the card — image opens lightbox only
+          e.stopPropagation();
           if (project.image) {
             setLightboxOpen(true);
           }
@@ -33,10 +35,15 @@ export function ProjectVisual({ project }: { project: Project }) {
         onKeyDown={(e) => {
           if (project.image && (e.key === "Enter" || e.key === " ")) {
             e.preventDefault();
+            e.stopPropagation();
             setLightboxOpen(true);
           }
         }}
-        aria-label={project.image ? `View full size preview for ${project.title}` : undefined}
+        aria-label={
+          project.image
+            ? `View full size preview for ${project.title}`
+            : undefined
+        }
       >
         {project.image ? (
           <>
@@ -60,9 +67,7 @@ export function ProjectVisual({ project }: { project: Project }) {
         ) : (
           <div className="project-no-image">
             <span>Visual Evidence</span>
-            <p>
-              Project documentation available inside the case study.
-            </p>
+            <p>Project documentation available inside the case study.</p>
           </div>
         )}
       </div>
@@ -86,27 +91,43 @@ export function ProjectCard({
   project: Project;
   index?: number;
 }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
+    // Do not navigate if the user clicked a nested interactive element
+    const target = e.target as HTMLElement;
+    const isInteractive = target.closest(
+      "button, a, [role='button'], input, select, textarea, .project-visual"
+    );
+    if (isInteractive) return;
+
+    navigate(`/work/${project.slug}`);
+  };
+
+  const handleCardKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navigate(`/work/${project.slug}`);
+    }
+  };
+
   return (
     <motion.article
       className="project-card"
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.15,
-      }}
+      onClick={handleCardClick}
+      onKeyDown={handleCardKeyDown}
+      tabIndex={0}
+      role="link"
+      aria-label={`View case study for ${project.title}`}
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
         duration: 0.5,
         delay: Math.min(index * 0.06, 0.25),
       }}
     >
-      {/* PROJECT IMAGE */}
+      {/* PROJECT IMAGE — has its own click handler for lightbox */}
       <ProjectVisual project={project} />
 
       {/* PROJECT CONTENT */}
@@ -139,7 +160,12 @@ export function ProjectCard({
           ))}
         </div>
 
-        <Link className="text-link" to={`/work/${project.slug}`}>
+        {/* This Link stops propagation itself since <a> is intercepted by the guard */}
+        <Link
+          className="text-link"
+          to={`/work/${project.slug}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           View case study
           <ArrowRight size={17} />
         </Link>
