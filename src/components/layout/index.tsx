@@ -1,54 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ExternalLink, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { profile } from "../../data";
 import { ThemeToggle } from "../ThemeToggle";
+import { ScrollManager } from "../ScrollManager";
+import { BackButton } from "../BackButton";
 import { motion, AnimatePresence } from "motion/react";
 
 const nav = [
   ["/", "Home"],
   ["/work", "Work"],
-  ["/#certificates", "Certificates"],
+  ["/certificates", "Certificates"],
   ["/capabilities", "Capabilities"],
   ["/about", "About"],
   ["/contact", "Contact"],
 ];
 
-function ScrollTop() {
-  const { pathname, hash } = useLocation();
-
-  useEffect(() => {
-    if (hash) {
-      setTimeout(() => {
-        const elem = document.querySelector(hash);
-        if (elem) {
-          elem.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
-
-  return null;
-}
-
 export function Header() {
   const [open, setOpen] = useState(false);
-  const location = useLocation();
-
-  const handleNavClick = (to: string) => {
-    setOpen(false);
-    if (to.includes("#")) {
-      const hash = to.substring(to.indexOf("#"));
-      if (location.pathname === "/") {
-        const elem = document.querySelector(hash);
-        if (elem) {
-          elem.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  };
 
   return (
     <header className="site-header">
@@ -78,36 +47,17 @@ export function Header() {
           className={open ? "main-nav open" : "main-nav"}
           aria-label="Primary navigation"
         >
-          {nav.map(([to, label]) => {
-            const isHashLink = to.includes("#");
-            return isHashLink ? (
-              <a
-                key={to}
-                href={to}
-                onClick={(e) => {
-                  if (location.pathname === "/") {
-                    e.preventDefault();
-                  }
-                  handleNavClick(to);
-                }}
-                className={location.hash === "#certificates" ? "active" : ""}
-              >
-                {label}
-              </a>
-            ) : (
-              <NavLink
-                key={to}
-                to={to}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  isActive && !location.hash ? "active" : ""
-                }
-                end={to === "/"}
-              >
-                {label}
-              </NavLink>
-            );
-          })}
+          {nav.map(([to, label]) => (
+            <NavLink
+              key={to}
+              to={to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              end={to === "/"}
+            >
+              {label}
+            </NavLink>
+          ))}
           <a
             className="nav-cta"
             href={profile.resume}
@@ -170,14 +120,17 @@ export function Footer() {
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+
   return (
     <>
-      <ScrollTop />
+      <ScrollManager />
       <Header />
+      <BackButton />
       <main>
         <AnimatePresence mode="wait">
           <motion.div
-            key={useLocation().pathname}
+            key={location.pathname}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

@@ -17,7 +17,11 @@ const ANIMATION = {
   },
 };
 
-export function CertificatesSection() {
+type CertificatesSectionProps = {
+  hideHeading?: boolean;
+};
+
+export function CertificatesSection({ hideHeading = false }: CertificatesSectionProps) {
   const [selectedCertificate, setSelectedCertificate] =
     useState<Certificate | null>(null);
 
@@ -33,17 +37,15 @@ export function CertificatesSection() {
 
   return (
     <>
-      <section
-        id="certificates"
-        className="section soft certificates-section"
-        aria-labelledby="certificates-heading"
-      >
+      <section className="section compact certificates-section">
         <div className="container">
-          <SectionHeading
-            kicker="Certificates & Learning"
-            title="Certificates & Professional Development"
-            body="Continuous learning across technology, business, and industry."
-          />
+          {!hideHeading && (
+            <SectionHeading
+              kicker="Certificates & Learning"
+              title="Certificates & Professional Development"
+              body="Continuous learning across technology, business, and industry."
+            />
+          )}
 
           <div className="cert-grid">
             {certificates.map((certificate, index) => {

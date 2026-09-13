@@ -95,22 +95,25 @@ export const projects: Project[] = [
     category: [
       "Automation & Business Systems",
       "Data & Analytics",
+      "AI-Assisted Workflows",
     ],
 
     summary:
-      "An automated operational system that transforms recurring field updates, attendance records, and productivity data into validated KPIs, monthly comparisons, and management-ready insights.",
+      "An end-to-end operational system that transforms recurring productivity, attendance, workforce, and project data into validated KPIs, performance comparisons, management dashboards, and AI-assisted insights for faster decision-making.",
 
     problem:
-      "Field productivity, attendance, completed work, and recurring operational records were spread across manual workflows, making data collection, monthly comparison, validation, and performance review time-consuming.",
+      "Field productivity, attendance, completed work, workforce participation, and recurring operational records were distributed across manual workflows and large datasets. Finding specific information, validating records, comparing performance across periods, and preparing management insights required significant time and repeated manual effort.",
 
     role:
-      "Workflow analysis, data architecture, Google Forms design, Apps Script automation, validation logic, monthly comparison design, KPI development, and management dashboard implementation.",
+      "Workflow analysis, data architecture, Google Forms design, Google Sheets structuring, Apps Script automation, validation logic, KPI development, monthly comparison design, dashboard implementation, and AI-assisted data querying.",
 
     tools: [
       "Google Sheets",
       "Google Apps Script",
       "Google Forms",
+      "AI Assistant",
       "Workflow Automation",
+      "Data Validation",
       "Dashboard Design",
     ],
 
@@ -119,44 +122,57 @@ export const projects: Project[] = [
     gallery: [
       "/assets/dashboard.png",
       "/assets/attendas.png",
+      "/assets/productivity-ai.jpeg",
     ],
 
     outcome:
-      "Built one connected workflow for collecting, processing, validating, comparing, and visualizing recurring operational data, making productivity and attendance performance easier to monitor over time.",
+      "Built one connected operational workflow for collecting, processing, validating, comparing, and visualizing recurring business data, then added an AI assistant layer that allows thousands of productivity, attendance, project, and financial records to be queried using natural language and converted into clear answers and actionable insights in seconds.",
 
     context:
-      "Built for a real engineering and construction-solutions environment. The portfolio presentation focuses on workflow architecture and reporting while protecting private employee, financial, operational, and proprietary business information.",
+      "Built for a real engineering and construction-solutions environment. The system supports recurring operational reporting, workforce tracking, productivity analysis, and management review. The portfolio presentation focuses on workflow architecture, automation, analytics, and AI-assisted decision support while protecting private employee, financial, operational, and proprietary business information.",
 
     approach: [
-      "Mapped the complete reporting and attendance workflow",
-      "Structured recurring operational data",
-      "Standardized Google Forms data collection",
+      "Mapped the complete productivity and attendance workflow",
+      "Structured recurring operational and workforce data",
+      "Standardized data collection using Google Forms",
       "Connected Google Forms with Google Sheets",
-      "Automated processing using Google Apps Script",
+      "Automated record processing using Google Apps Script",
       "Built validation and data-quality controls",
-      "Handled duplicate and incomplete records",
-      "Created monthly performance comparison logic",
+      "Handled duplicate, missing, and incomplete records",
+      "Created monthly and period-based performance comparison logic",
       "Built attendance and absence classification",
-      "Separated raw data from management reporting",
-      "Designed KPIs for productivity and operational review",
+      "Separated raw operational data from management reporting",
+      "Designed KPIs for productivity and workforce performance",
+      "Created management-ready analytical dashboards",
+      "Added an AI assistant layer for natural-language data queries",
+      "Optimized AI queries using smart filtering and local calculations",
+      "Enabled faster access to information across thousands of records",
     ],
 
     solution: [
       "Google Forms data collection",
+      "Centralized Google Sheets data architecture",
       "Apps Script workflow automation",
       "Automated record processing",
       "Productivity tracking",
       "Attendance and absence management",
+      "Workforce participation tracking",
       "Monthly performance comparison",
+      "Period-based operational analysis",
       "Data-quality and validation controls",
-      "Recurring work analysis",
+      "Duplicate and incomplete record handling",
       "Employee performance ranking",
       "KPI dashboard",
       "Management-ready reporting views",
+      "AI-assisted operational intelligence",
+      "Natural-language data querying",
+      "Smart data filtering",
+      "Local calculations before AI processing",
+      "Instant operational insights",
     ],
 
     learning:
-      "Reliable analytics starts long before the dashboard. Strong data collection, automation, validation, and reporting layers must work together to produce trustworthy business insights.",
+      "Reliable analytics starts long before the dashboard. Strong data collection, structured workflows, automation, validation, and reporting must work together first. Adding AI on top of that foundation makes operational data easier to access — turning thousands of records into direct answers, faster insights, and better-informed decisions.",
 
     featured: true,
   },
@@ -597,81 +613,82 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-  slug: "ichem-product-marketing",
+    slug: "ichem-product-marketing",
 
-  title: "iChem B2B Product Marketing & Visual Communication",
+    title: "iChem B2B Product Marketing & Visual Communication",
 
-  category: [
-    "Content & Visual Communication",
-    "Marketing"
-  ],
+    category: [
+      "Content & Visual Communication",
+      "Marketing"
+    ],
 
-  summary:
-    "A B2B marketing and visual communication project created for iChem, transforming technical construction products into clear, engaging, and brand-consistent social media content for engineers, consultants, contractors, and clients.",
+    summary:
+      "A B2B marketing and visual communication project created for iChem, transforming technical construction products into clear, engaging, and brand-consistent social media content for engineers, consultants, contractors, and clients.",
 
-  problem:
-    "iChem operates across highly technical construction and interior product categories, where product features, applications, and specifications can be difficult to communicate through conventional social media. The challenge was to make technical products visually engaging without losing credibility, clarity, or brand consistency.",
+    problem:
+      "iChem operates across highly technical construction and interior product categories, where product features, applications, and specifications can be difficult to communicate through conventional social media. The challenge was to make technical products visually engaging without losing credibility, clarity, or brand consistency.",
 
-  role:
-    "Marketing content planning, product positioning, creative direction, visual concept development, copy hierarchy, social media design, technical product communication, and campaign production.",
+    role:
+      "Marketing content planning, product positioning, creative direction, visual concept development, copy hierarchy, social media design, technical product communication, and campaign production.",
 
-  tools: [
-    "Content Strategy",
-    "Adobe Photoshop",
-    "Social Media Design",
-    "AI-Assisted Visual Production",
-    "Product Marketing",
-    "Brand Communication"
-  ],
+    tools: [
+      "Content Strategy",
+      "Adobe Photoshop",
+      "Social Media Design",
+      "AI-Assisted Visual Production",
+      "Product Marketing",
+      "Brand Communication"
+    ],
 
-  image: "/assets/1.jpeg",
+    image: "/assets/10.jpeg",
 
-  gallery: [
-    "/assets/1.jpeg",
-    "/assets/2.jpeg",
-    "/assets/3.jpeg",
-    "/assets/4.jpeg",
-    "/assets/5.jpeg",
-    "/assets/6.jpeg",
-    "/assets/7.jpeg",
-    "/assets/8.jpeg",
-    "/assets/9.jpeg"
-  ],
+    gallery: [
+      "/assets/1.jpeg",
+      "/assets/2.jpeg",
+      "/assets/3.jpeg",
+      "/assets/4.jpeg",
+      "/assets/5.jpeg",
+      "/assets/6.jpeg",
+      "/assets/7.jpeg",
+      "/assets/8.jpeg",
+      "/assets/9.jpeg" ,
+      "/assets/10.jpeg ",
+    ],
 
-  outcome:
-    "Created a repeatable visual marketing system that made iChem's technical products easier to recognize, understand, and communicate across digital channels while strengthening the consistency of the brand's B2B presence.",
+    outcome:
+      "Created a repeatable visual marketing system that made iChem's technical products easier to recognize, understand, and communicate across digital channels while strengthening the consistency of the brand's B2B presence.",
 
-  context:
-    "Created for iChem Building Solutions in a real B2B engineering and construction environment. The work spans technical product communication, interior solutions, architectural products, and branded social media campaigns.",
+    context:
+      "Created for iChem Building Solutions in a real B2B engineering and construction environment. The work spans technical product communication, interior solutions, architectural products, and branded social media campaigns.",
 
-  approach: [
-    "Translated technical product information into audience-focused marketing messages",
-    "Defined a clear visual hook for each product or application",
-    "Balanced engineering credibility with strong social media presentation",
-    "Built consistent layouts around iChem's visual identity",
-    "Used product benefits and applications as the core of each creative concept",
-    "Structured copy for fast scanning and clear information hierarchy",
-    "Adapted visual concepts to different construction and interior product categories",
-    "Maintained consistency while giving each product campaign its own visual character"
-  ],
+    approach: [
+      "Translated technical product information into audience-focused marketing messages",
+      "Defined a clear visual hook for each product or application",
+      "Balanced engineering credibility with strong social media presentation",
+      "Built consistent layouts around iChem's visual identity",
+      "Used product benefits and applications as the core of each creative concept",
+      "Structured copy for fast scanning and clear information hierarchy",
+      "Adapted visual concepts to different construction and interior product categories",
+      "Maintained consistency while giving each product campaign its own visual character"
+    ],
 
-  solution: [
-    "B2B social media product campaigns",
-    "Technical product feature communication",
-    "Expansion joint marketing creatives",
-    "HPL partitions and accessories promotion",
-    "Corian solution campaigns",
-    "Raised floor marketing content",
-    "Product performance and benefit-focused posts",
-    "Application-based visual storytelling",
-    "Consistent branded content system"
-  ],
+    solution: [
+      "B2B social media product campaigns",
+      "Technical product feature communication",
+      "Expansion joint marketing creatives",
+      "HPL partitions and accessories promotion",
+      "Corian solution campaigns",
+      "Raised floor marketing content",
+      "Product performance and benefit-focused posts",
+      "Application-based visual storytelling",
+      "Consistent branded content system"
+    ],
 
-  learning:
-    "Effective B2B engineering marketing is not about simplifying technical products until they lose meaning. The strongest communication keeps the technical value intact while translating it into clear benefits, strong visual hierarchy, and a message the target audience can understand quickly.",
+    learning:
+      "Effective B2B engineering marketing is not about simplifying technical products until they lose meaning. The strongest communication keeps the technical value intact while translating it into clear benefits, strong visual hierarchy, and a message the target audience can understand quickly.",
 
-  featured: true
-},
+    featured: true
+  },
 
   {
     slug: "weather-app",

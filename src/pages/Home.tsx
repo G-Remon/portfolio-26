@@ -5,7 +5,6 @@ import { Layout } from "../components/layout";
 import { Eyebrow, SectionHeading } from "../components/Typography";
 import { ProjectCard } from "../components/ProjectCard";
 import { PageMeta } from "../components/PageMeta";
-import { CertificatesSection } from "../components/CertificatesSection";
 import { motion } from "motion/react";
 
 export function Home() {
@@ -133,9 +132,7 @@ export function Home() {
         </div>
       </section>
 
-      <CertificatesSection />
-
-      <section className="section dark">
+      <section className="section journey-section">
         <div className="container journey">
           <SectionHeading 
             kicker="Professional journey" 

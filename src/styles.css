@@ -104,10 +104,21 @@
   background: var(--off);
   font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-synthesis: none;
+  /* Professional Journey */
+--journey-bg: #f6f7f8;
+--journey-text: #101820;
+--journey-muted: #66727d;
+--journey-line: #d9e0e4;
+--journey-dot: #0e3656;
 }
 
 html[data-theme="dark"],
 html.dark {
+  --journey-bg: #070c12;
+--journey-text: #f5f7fa;
+--journey-muted: #8d9baa;
+--journey-line: #283747;
+--journey-dot: #f5f7fa;
   color-scheme: dark;
 
   --ink: #f5f7fa;
@@ -868,41 +879,66 @@ img {
 
 
 /* =========================================================
-   JOURNEY
+   PROFESSIONAL JOURNEY
 ========================================================= */
+
+.journey-section {
+  background: var(--journey-bg);
+  color: var(--journey-text);
+
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
 .journey .section-head h2 {
-  color: var(--on-dark);
+  color: var(--journey-text);
+}
+
+.journey .section-head .eyebrow {
+  color: var(--journey-muted);
 }
 
 .journey-line {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  border-top: 1px solid var(--dark-line);
+
+  border-top: 1px solid var(--journey-line);
 }
 
 .journey-line > div {
-  padding: 24px 14px 0 0;
   position: relative;
+  padding: 24px 14px 0 0;
 }
 
 .journey-line > div::before {
   content: "";
+
   position: absolute;
   top: -5px;
   left: 0;
+
   width: 9px;
   height: 9px;
-  background: var(--on-dark);
+
+  background: var(--journey-dot);
 }
 
 .journey-line span {
+  color: var(--journey-muted);
+
   font-size: 10px;
-  opacity: 0.45;
+
+  opacity: 0.8;
 }
 
 .journey-line p {
-  font-weight: 700;
+  margin: 6px 0 0;
+
+  color: var(--journey-text);
+
   font-size: 13px;
+  font-weight: 700;
 }
 
 
@@ -1526,7 +1562,7 @@ footer {
 /* =========================================================
    CERTIFICATES
 ========================================================= */
-#certificates {
+.certificates-section {
   scroll-margin-top: 90px;
 }
 
@@ -2406,5 +2442,74 @@ textarea {
     transition: none !important;
     animation: none !important;
   }
+}
 
+/* =========================================================
+   GLOBAL BACK BUTTON
+========================================================= */
+
+.back-button {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease,
+              background-color 0.25s ease;
+}
+
+html[data-theme="dark"] .back-button,
+html.dark .back-button {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.back-button-icon {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 12px 30px rgba(0, 103, 199, 0.15);
+}
+
+.back-button:hover .back-button-icon {
+  transform: translateX(-3px);
+}
+
+.back-button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .back-button {
+    bottom: 20px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+  }
+
+  .back-button-label {
+    display: none;
+  }
 }
