@@ -5,11 +5,13 @@ import {
   Github,
   ChevronLeft,
   ChevronRight,
+  Maximize2,
 } from "lucide-react";
 
 import { projects } from "../data";
 import { Layout } from "../components/layout";
 import { ProjectVisual } from "../components/ProjectCard";
+import { ImageLightbox } from "../components/ImageLightbox";
 import { PageMeta } from "../components/PageMeta";
 import { NotFound } from "./NotFound";
 import { motion, AnimatePresence } from "motion/react";
@@ -19,10 +21,8 @@ export function CaseStudy() {
 
   const p = projects.find((x) => x.slug === slug);
 
-  /*
-    Hooks لازم تفضل قبل أي conditional return
-  */
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   /*
     لما تنتقل من مشروع لمشروع
@@ -132,6 +132,8 @@ export function CaseStudy() {
                     key={`${slug}-${currentSlide}`}
                     src={slides[currentSlide]}
                     alt={`${p.title} — project screen ${currentSlide + 1}`}
+                    style={{ cursor: "zoom-in" }}
+                    onClick={() => setLightboxIndex(currentSlide)}
                     initial={{
                       opacity: 0,
                       x: 40,
@@ -150,6 +152,15 @@ export function CaseStudy() {
                     }}
                   />
                 </AnimatePresence>
+
+                <span
+                  className="image-expand-badge"
+                  onClick={() => setLightboxIndex(currentSlide)}
+                  style={{ cursor: "pointer", pointerEvents: "auto" }}
+                >
+                  <Maximize2 size={13} aria-hidden="true" />
+                  View full size
+                </span>
 
                 {/* Previous Arrow */}
 
@@ -358,6 +369,15 @@ export function CaseStudy() {
           )}
         </div>
       </section>
+
+      {lightboxIndex !== null && slides.length > 0 && (
+        <ImageLightbox
+          images={slides}
+          initialIndex={lightboxIndex}
+          altPrefix={p.title}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </Layout>
   );
 }
